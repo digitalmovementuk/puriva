@@ -456,6 +456,33 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
 .jc-foot .jc-open svg{width:20px;height:20px;fill:#fff}
 .jc-foot .jc-open:hover{background:#1ebe5b;transform:translateY(-2px)}
 
+/* ============ PRICING (built into homepage) ============ */
+.pricing{background:linear-gradient(180deg,var(--cream-2),var(--cream))}
+.price-note{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:50px;padding:10px 22px;font-size:13.5px;color:var(--muted);box-shadow:var(--shadow-sm)}
+.price-note svg{width:17px;height:17px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex-shrink:0}
+.pl-cats{margin-top:50px}
+.pl-cat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(28px,3.5vw,50px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;margin-bottom:30px}
+.pl-cat::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-soft),transparent)}
+.pl-cat-head{display:flex;align-items:center;gap:18px;margin-bottom:8px}
+.pl-ic{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--cream),var(--cream-2));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--line)}
+.pl-ic svg{width:28px;height:28px;stroke:var(--gold-deep);fill:none;stroke-width:1.5}
+.pl-cat-head .t .num{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.pl-cat-head .t h2{font-size:clamp(24px,3vw,34px);font-weight:300;letter-spacing:-.02em;margin-top:2px}
+.pl-cat-head .t h2 b{font-weight:700}
+.pl-cat-desc{color:var(--muted);font-size:15px;margin:10px 0 6px;max-width:760px}
+.pl-sub{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin:26px 0 4px;display:flex;align-items:center;gap:12px}
+.pl-sub::after{content:"";flex:1;height:1px;background:var(--line)}
+.pl-rows{display:flex;flex-direction:column}
+.pl-row{display:flex;align-items:flex-end;gap:6px;padding:13px 8px 13px 4px;border-radius:10px;transition:background .35s,padding-left .35s var(--ease)}
+.pl-row:not(:last-child){border-bottom:1px solid #f1ebe0}
+.pl-row:hover{background:var(--cream);padding-left:12px}
+.pl-name{font-size:16px;font-weight:600;color:var(--ink);line-height:1.35}
+.pl-name small{display:block;font-size:12.5px;font-weight:400;color:var(--muted);letter-spacing:.01em;margin-top:1px}
+.pl-dots{flex:1 1 auto;border-bottom:1.5px dotted #d8cdba;min-width:24px;transform:translateY(-5px)}
+.pl-price{font-size:16px;font-weight:800;color:var(--gold-deep);white-space:nowrap;letter-spacing:-.01em}
+.pl-price .cur{font-size:11.5px;font-weight:700;color:var(--muted);margin-right:2px;letter-spacing:.02em}
+.pl-price .q{display:block;text-align:right;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+
 /* ============ GOOGLE REVIEWS ============ */
 .g-logo{display:inline-flex;flex-shrink:0}
 .g-logo svg{display:block}
@@ -558,6 +585,10 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
   .treat-grid{grid-template-columns:1fr;max-width:400px;margin-inline:auto}
   .pillar{grid-template-columns:1fr;gap:6px}
   .foot-top{grid-template-columns:1fr;gap:34px}
+  .pl-row{flex-wrap:wrap;align-items:baseline}
+  .pl-dots{display:none}
+  .pl-name{flex:1 1 60%}
+  .pl-price{margin-left:auto}
 }
 /* ===== MOBILE: center-aligned in general ===== */
 @media(max-width:860px){
@@ -591,6 +622,10 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
   .gcard-id{flex-grow:0}
   .gcard-meta{justify-content:center}
   .gverified{justify-content:center}
+  .pl-cat-head{flex-direction:column;text-align:center;gap:12px}
+  .pl-cat-desc{margin-inline:auto;text-align:center}
+  .pl-sub{justify-content:center}
+  .pl-sub::after{display:none}
   .why-card .n{display:block}
   .foot-top{text-align:center}
   footer .fabout{margin-inline:auto}
@@ -654,7 +689,7 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
         <a href="#treatments" class="catpill" data-cat="body">Body</a>
         <a href="#treatments" class="catpill" data-cat="hair">Hair</a>
         <a href="#treatments" class="catpill" data-cat="wellness">Wellness</a>
-        <a href="https://puriva.id/price-list/" class="catpill ghost">Price List</a>
+        <a href="#pricing" class="catpill ghost">Price List</a>
       </nav>
     </div>
   </div>
@@ -891,7 +926,7 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
       </a>
     </div>
     <div class="treat-note reveal">
-      <a href="https://puriva.id/price-list/" class="btn btn-out">View Full Treatment &amp; Price List</a>
+      <a href="#pricing" class="btn btn-out">View Full Treatment &amp; Price List</a>
     </div>
   </div>
 </section>
@@ -1087,6 +1122,309 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
   </div>
 </section>
 
+<!-- ============ PRICING (built into homepage) ============ -->
+<section class="pad pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Price List</span>
+      <h2 class="h2">A transparent <b>treatment menu</b></h2>
+      <p class="lead">Clear, honest pricing across every treatment — from injectables and skin boosters to lifting, lasers and body care. Your personalised plan is always confirmed with your doctor at consultation.</p>
+      <div class="price-note reveal d1">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        All prices in Indonesian Rupiah (IDR) and subject to change. Packages &amp; current promotions available on request.
+      </div>
+    </div>
+    <div class="pl-cats">
+    <!-- 1 INJECTABLES -->
+    <div class="pl-cat reveal" id="injectables">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M17 3l4 4M14 6l4 4M3 21l3-1 11-11-2-2L4 18z"/></svg></span>
+        <div class="t"><div class="num">01 — Injectables</div><h2>Anti-Wrinkle &amp; <b>Dermal Fillers</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Smooth expression lines and restore natural volume with premium, FDA-approved injectables — placed by our doctors for balanced, never-frozen results.</p>
+      <div class="pl-sub">Anti-Wrinkle Injections</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Botox — Allergan</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>89.000<span class="q">per unit</span></span></div>
+        <div class="pl-row"><span class="pl-name">Botox — Xeomin (Merz)</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>89.000<span class="q">per unit</span></span></div>
+        <div class="pl-row"><span class="pl-name">Botox — Nabota</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>89.000<span class="q">per unit</span></span></div>
+      </div>
+      <div class="pl-sub">Dermal Fillers</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Juvéderm Ultra Plus</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Juvéderm Volbella</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Juvéderm Volift</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Juvéderm Voluma</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Juvéderm Volux</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.900.000</span></div>
+        <div class="pl-row"><span class="pl-name">Hyaluronidase<small>Filler correction / dissolve</small></span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+      </div>
+    </div>
+
+    <!-- 2 SKIN BOOSTERS -->
+    <div class="pl-cat reveal" id="boosters">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="2.5"/></svg></span>
+        <div class="t"><div class="num">02 — Skin Boosters</div><h2>Bio-Remodelling &amp; <b>Hydration</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Injectable hydration and collagen stimulation for plumper, firmer, lit-from-within skin — including the renowned Profhilo range.</p>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Profhilo Hybrid Skin Booster</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>6.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Profhilo Hybrid — Body</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>9.900.000</span></div>
+        <div class="pl-row"><span class="pl-name">Profhilo Structura</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>8.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Nucleofill — Polynucleotide</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">NOVUMA</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>7.900.000</span></div>
+        <div class="pl-row"><span class="pl-name">BI-DENS</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Exosome</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">BRILLIANT Red Booster</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">G Collagen Recombination Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">DQ Shine Skin Booster</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.500.000</span></div>
+      </div>
+    </div>
+
+    <!-- 3 REGENERATIVE -->
+    <div class="pl-cat reveal" id="regenerative">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2-6 5.5-10z"/><path d="M10 13a2 2 0 0 0 2 2"/></svg></span>
+        <div class="t"><div class="num">03 — Regenerative</div><h2>PRP &amp; <b>Secretome</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Harness your body's own healing — platelet-rich plasma and growth-factor secretome to regenerate skin and support hair.</p>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Platelet-Rich Plasma (PRP)</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">PRP + Micro-Needling — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">PRP + Micro-Needling — Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Secretome Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.100.000</span></div>
+        <div class="pl-row"><span class="pl-name">Secretome Injection — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Secretome Injection — Hair</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Secretome + Micro-Needling — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Secretome + Micro-Needling — Hair Growth</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.300.000</span></div>
+      </div>
+    </div>
+
+    <!-- 4 LIFTING -->
+    <div class="pl-cat reveal" id="lifting">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 21V7M12 7l-5 5M12 7l5 5M5 3h14"/></svg></span>
+        <div class="t"><div class="num">04 — Lifting &amp; Tightening</div><h2>HIFU &amp; <b>Radiofrequency</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Non-invasive lifting and skin tightening with the world's leading platforms — no surgery, minimal downtime.</p>
+      <div class="pl-sub">Ultraformer MPT (HIFU)</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Upper Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.700.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lower Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.900.000</span></div>
+        <div class="pl-row"><span class="pl-name">Double Chin + Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Ultraboost Facial</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Additional Shots<small>Per 100 shots</small></span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+      </div>
+      <div class="pl-sub">Liftera HIFU</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Full Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lower Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Upper Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Neck + Chin</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Eye Lift</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+      </div>
+      <div class="pl-sub">Sylfirm X (RF Micro-Needling)</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Face or Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Face and Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Body</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.600.000</span></div>
+      </div>
+      <div class="pl-sub">Intragen Grid RF Lift</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Upper Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lower Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Full Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>4.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Bright Eye Lift</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.000.000</span></div>
+      </div>
+      <div class="pl-sub">Puriva Fab Face (EMRF)</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Chin or Forehead</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.700.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lower Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.300.000</span></div>
+      </div>
+    </div>
+
+    <!-- 5 LASER -->
+    <div class="pl-cat reveal" id="laser">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 2L9 5M12 2l3 3"/><circle cx="12" cy="15" r="6"/><path d="M12 13v4"/></svg></span>
+        <div class="t"><div class="num">05 — Laser &amp; Light</div><h2>Resurfacing &amp; <b>Brightening</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Advanced lasers and light therapy to resurface, even tone, fade pigmentation and rebuild collagen.</p>
+      <div class="pl-sub">Red Touch Collagen Laser</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Hands</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.900.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lips</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.300.000</span></div>
+      </div>
+      <div class="pl-sub">Helios Laser</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Face &amp; Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.400.000</span></div>
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Hands</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Chest</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.250.000</span></div>
+        <div class="pl-row"><span class="pl-name">Rejuvenation — Lip</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>550.000</span></div>
+        <div class="pl-row"><span class="pl-name">Black Laser — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Single Spot</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Dark Circle</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Laser Tattoo Removal</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000<span class="q">from</span></span></div>
+      </div>
+      <div class="pl-sub">Photo-Rejuvenation &amp; Light Therapy</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Acne Light Therapy</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Face &amp; Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.400.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Hands</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Full Arms</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Full Back</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Chest</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brightening Pulsed Light — Legs</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">CO₂ Carboxy Therapy</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>790.000</span></div>
+        <div class="pl-row"><span class="pl-name">LED PDT Light Therapy</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>250.000</span></div>
+      </div>
+    </div>
+
+    <!-- 6 HAIR -->
+    <div class="pl-cat reveal" id="hair">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0"/><path d="M8 14c0-3 1-5 4-5s4 2 4 5"/><path d="M12 14v6"/></svg></span>
+        <div class="t"><div class="num">06 — Hair</div><h2>Removal &amp; <b>Growth</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Smooth, lasting IPL hair reduction across the body, plus clinical therapy to encourage healthy hair growth.</p>
+      <div class="pl-sub">IPL Hair Removal — Face</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Upper Lip or Chin</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>250.000</span></div>
+        <div class="pl-row"><span class="pl-name">Upper Lip and Chin</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>350.000</span></div>
+        <div class="pl-row"><span class="pl-name">Lower Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Full Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+      </div>
+      <div class="pl-sub">IPL Hair Removal — Upper Body</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Underarms</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>350.000</span></div>
+        <div class="pl-row"><span class="pl-name">Chest</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>700.000</span></div>
+        <div class="pl-row"><span class="pl-name">Abdomen</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>700.000</span></div>
+        <div class="pl-row"><span class="pl-name">Half Arms</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>750.000</span></div>
+        <div class="pl-row"><span class="pl-name">Full Arms</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Half Back</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Full Back</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Hands &amp; Fingers</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>350.000</span></div>
+      </div>
+      <div class="pl-sub">IPL Hair Removal — Lower Body</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Bikini Line</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Buttocks</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Brazilian</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>700.000</span></div>
+        <div class="pl-row"><span class="pl-name">Half Legs</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>900.000</span></div>
+        <div class="pl-row"><span class="pl-name">Full Legs</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Feet &amp; Toes</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>350.000</span></div>
+      </div>
+      <div class="pl-sub">Hair Growth</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Theradome Hair Therapy</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Theradome Hair Therapy<small>Package of 8</small></span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Puriva AQ Advance Hair Complex</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.500.000</span></div>
+      </div>
+    </div>
+
+    <!-- 7 BODY & IV -->
+    <div class="pl-cat reveal" id="body">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M9 12h6"/></svg></span>
+        <div class="t"><div class="num">07 — Body &amp; Wellness</div><h2>Contouring, IV &amp; <b>Vitamins</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Sculpt and tone the body, and support skin and wellbeing from the inside with IV infusions and vitamin therapy.</p>
+      <div class="pl-sub">Body Contouring</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Fat Freeze by Cristal<small>Cryolipolysis — per cup</small></span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Puriva Meso Lippo — Body</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Puriva Meso Lippo — Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>800.000</span></div>
+        <div class="pl-row"><span class="pl-name">30-Day Weight Control Program</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.200.000</span></div>
+      </div>
+      <div class="pl-sub">Indiba Deep Care (Radiofrequency)</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Face</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Face and Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Neck</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Abdomen</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Arms / Calf</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Back / Breast / Buttocks / Thigh</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Hair</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Package — 5 sessions</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>6.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Package — 10 sessions</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>12.000.000</span></div>
+        <div class="pl-row"><span class="pl-name">Package — 20 sessions</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>22.000.000</span></div>
+      </div>
+      <div class="pl-sub">IV Infusions &amp; Vitamins</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Ultimate Infusion</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vita Mix Infusion</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vitamin C Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>400.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vitamin B Complex</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>130.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vitamin D Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vein Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.000.000</span></div>
+      </div>
+    </div>
+
+    <!-- 8 FACIALS -->
+    <div class="pl-cat reveal" id="facials">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M8 3a8 8 0 0 1 8 8c0 5-3 10-4 10s-4-5-4-10a8 8 0 0 1 0-8z"/></svg></span>
+        <div class="t"><div class="num">08 — Facials &amp; Peels</div><h2>Medical-Grade <b>Skin Care</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Signature facials and professional peels tailored to your skin — deep cleansing, brightening and resurfacing.</p>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">The Caviar Omakase Facial<small>7 luxe-step medi-facial</small></span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">iS Clinical Fire &amp; Ice Facial</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.200.000</span></div>
+        <div class="pl-row"><span class="pl-name">Dermalogica Pro Signature Deep Cleansing Facial</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>1.100.000</span></div>
+        <div class="pl-row"><span class="pl-name">Oxygenceuticals Pure Detoxygen Facial</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>990.000</span></div>
+        <div class="pl-row"><span class="pl-name">NeoStrata ProSystem Retinol Hollywood Peel</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>880.000</span></div>
+        <div class="pl-row"><span class="pl-name">Dermalogica Peeling</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Premium Chemical Peeling</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">TCA Cross</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Regular Chemical Peeling</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+      </div>
+    </div>
+
+    <!-- 9 MENS & DIAGNOSTICS -->
+    <div class="pl-cat reveal" id="mens">
+      <div class="pl-cat-head">
+        <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v3a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M6 21a6 6 0 0 1 12 0"/></svg></span>
+        <div class="t"><div class="num">09 — Men's Health &amp; Diagnostics</div><h2>Hormones, Dermatology &amp; <b>Lab Tests</b></h2></div>
+      </div>
+      <p class="pl-cat-desc">Doctor-led hormone therapy, medical dermatology and diagnostic testing — confidential and clinically managed.</p>
+      <div class="pl-sub">Hormone Therapy</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Nebido Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Human Growth Hormone — Saizen (Merck)</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Sustanon 250</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+      </div>
+      <div class="pl-sub">Dermatology</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">Cauterization</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Pre-Cancer Screening</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+        <div class="pl-row"><span class="pl-name">Keloid Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Liquid Nitrogen</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>300.000</span></div>
+        <div class="pl-row"><span class="pl-name">Acne Injection</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>100.000</span></div>
+      </div>
+      <div class="pl-sub">Diagnostics &amp; Lab Tests</div>
+      <div class="pl-rows">
+        <div class="pl-row"><span class="pl-name">NutriGenome Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>7.800.000</span></div>
+        <div class="pl-row"><span class="pl-name">NutriGene Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>5.500.000</span></div>
+        <div class="pl-row"><span class="pl-name">HGH Test — Man</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>3.100.000</span></div>
+        <div class="pl-row"><span class="pl-name">HGH Test — Woman</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.850.000</span></div>
+        <div class="pl-row"><span class="pl-name">Testosterone Complete Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>2.600.000</span></div>
+        <div class="pl-row"><span class="pl-name">Testosterone Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">PSA Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>600.000</span></div>
+        <div class="pl-row"><span class="pl-name">SHBG Test</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>800.000</span></div>
+        <div class="pl-row"><span class="pl-name">Vitamin D Check</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>650.000</span></div>
+        <div class="pl-row"><span class="pl-name">Online Video Consultation</span><span class="pl-dots"></span><span class="pl-price"><span class="cur">Rp</span>500.000</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT / CTA ============ -->
 <section class="contact pad" id="contact">
   <div class="wrap">
@@ -1159,7 +1497,7 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
         <ul>
           <li><a href="https://puriva.id/about-puriva-aesthetic-clinic-in-bali/">About Puriva</a></li>
           <li><a href="https://puriva.id/dermatology-doctor-in-bali/">Our Doctors</a></li>
-          <li><a href="https://puriva.id/price-list/">Price List</a></li>
+          <li><a href="#pricing">Price List</a></li>
           <li><a href="https://puriva.id/may-2026-promotions/">Promotions</a></li>
           <li><a href="https://puriva.id/puriva-privilege-card/">Privilege Card</a></li>
           <li><a href="https://puriva.id/contact-puriva-clinic-bali/">Contact</a></li>
