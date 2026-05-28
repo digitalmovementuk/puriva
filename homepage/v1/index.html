@@ -460,8 +460,13 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
 .pricing{background:linear-gradient(180deg,var(--cream-2),var(--cream))}
 .price-note{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:50px;padding:10px 22px;font-size:13.5px;color:var(--muted);box-shadow:var(--shadow-sm)}
 .price-note svg{width:17px;height:17px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex-shrink:0}
-.pl-cats{margin-top:50px}
-.pl-cat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(28px,3.5vw,50px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;margin-bottom:30px}
+.pl-tabs{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:34px auto 0;max-width:900px}
+.pltab{font-size:13px;font-weight:700;letter-spacing:.03em;padding:10px 20px;border-radius:50px;border:1.5px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:transform .35s var(--ease),background .35s,color .35s,border-color .35s}
+.pltab:hover{border-color:var(--gold);color:var(--ink-2);transform:translateY(-2px)}
+.pltab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pl-cats{margin-top:36px}
+@keyframes plFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pl-cat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(28px,3.5vw,50px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;margin-bottom:30px;animation:plFade .5s var(--ease) both}
 .pl-cat::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-soft),transparent)}
 .pl-cat-head{display:flex;align-items:center;gap:18px;margin-bottom:8px}
 .pl-ic{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--cream),var(--cream-2));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--line)}
@@ -1134,6 +1139,17 @@ footer ul a:hover{color:var(--gold-soft);padding-left:5px}
         All prices in Indonesian Rupiah (IDR) and subject to change. Packages &amp; current promotions available on request.
       </div>
     </div>
+    <div class="pl-tabs reveal d1" role="tablist" aria-label="Price categories">
+      <button class="pltab active" data-pcat="injectables">Injectables</button>
+      <button class="pltab" data-pcat="boosters">Skin Boosters</button>
+      <button class="pltab" data-pcat="regenerative">Regenerative</button>
+      <button class="pltab" data-pcat="lifting">Lifting &amp; HIFU</button>
+      <button class="pltab" data-pcat="laser">Laser &amp; Light</button>
+      <button class="pltab" data-pcat="hair">Hair</button>
+      <button class="pltab" data-pcat="body">Body &amp; IV</button>
+      <button class="pltab" data-pcat="facials">Facials</button>
+      <button class="pltab" data-pcat="mens">Men &amp; Tests</button>
+    </div>
     <div class="pl-cats">
     <!-- 1 INJECTABLES -->
     <div class="pl-cat reveal" id="injectables">
@@ -1736,6 +1752,24 @@ document.querySelectorAll('.catpill[data-cat]').forEach(p=>{
   vp.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop();},{passive:true});
   vp.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(dx<0?idx+1:idx-1);x0=null;start();},{passive:true});
   new IntersectionObserver((en)=>{en.forEach(e=>{inView=e.isIntersecting;inView?start():stop();});},{threshold:0.2}).observe(slider);
+})();
+
+/* price-list category tabs — show one category at a time */
+(function(){
+  const ptabs=[...document.querySelectorAll('.pltab')];
+  const pcats=[...document.querySelectorAll('.pl-cats .pl-cat')];
+  if(!ptabs.length||!pcats.length)return;
+  pcats.forEach(c=>c.classList.add('in'));
+  function showCat(id){
+    pcats.forEach(c=>{
+      const on=c.id===id;
+      c.style.display=on?'':'none';
+      if(on){c.style.animation='none';void c.offsetWidth;c.style.animation='';}
+    });
+    ptabs.forEach(t=>t.classList.toggle('active',t.dataset.pcat===id));
+  }
+  ptabs.forEach(t=>t.addEventListener('click',()=>showCat(t.dataset.pcat)));
+  showCat('injectables');
 })();
 
 /* treatment filter */
