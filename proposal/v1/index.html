@@ -184,7 +184,7 @@ header{position:sticky;top:0;z-index:100}
 .cbar .who .n{font-size:23px;font-weight:200;letter-spacing:-.02em}
 .cbar .track{height:10px;border-radius:6px;background:var(--cream-2);overflow:hidden}
 .cbar .fill{height:100%;border-radius:6px;transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease)}
-.cbar.them .fill{background:linear-gradient(90deg,#cbb7a0,#b6a283)}
+.cbar.them .fill{background:linear-gradient(90deg,#d3cdc3,#bfb8ad)}
 .cbar.you .fill{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
 .cbar.you .who .n{color:var(--gold-deep)}
 .compare .punch{font-size:clamp(20px,2.6vw,28px);font-weight:200;letter-spacing:-.02em;color:var(--ink);margin-top:8px}
@@ -292,12 +292,15 @@ footer .meta{font-size:13px;color:var(--muted);width:100%}
 .reveal.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
-/* lang visibility helper for attribute-less toggles handled in JS */
-2
 @media(max-width:760px){
   body{font-size:17px}
-  .util .wrap{justify-content:center;gap:10px 16px}
-  .util .tagline{width:100%;justify-content:center}
+  /* iPhone top strip: centered, max two lines (tagline / codes + toggle) */
+  .util .wrap{justify-content:center;gap:6px 14px;padding-block:8px}
+  .util .tagline{flex-basis:100%;justify-content:center;font-size:11.5px}
+  .offices .lbl{display:none}
+  .offices .dom{display:none}
+  .offices a{padding:3px 8px}
+  .offices{gap:4px}
   .cobrand img.pl{height:34px}.cobrand img.dm{height:30px}
   .nums{grid-template-columns:1fr;gap:32px}
   .cbars{grid-template-columns:1fr;gap:14px}
@@ -340,11 +343,11 @@ footer .meta{font-size:13px;color:var(--muted);width:100%}
       <span class="tagline" data-id="Agensi pemasaran digital global"><span class="dot"></span>Global digital marketing agency</span>
       <nav class="offices" aria-label="Our offices">
         <span class="lbl" data-id="Kantor">Offices</span>
-        <a href="https://digitalmovement.uk" target="_blank" rel="noopener"><b>UK</b> digitalmovement.uk</a>
+        <a href="https://digitalmovement.uk" target="_blank" rel="noopener"><b>UK</b> <span class="dom">digitalmovement.uk</span></a>
         <span class="sep">·</span>
-        <a href="https://www.digitalmovement.com.au" target="_blank" rel="noopener"><b>AU</b> digitalmovement.com.au</a>
+        <a href="https://www.digitalmovement.com.au" target="_blank" rel="noopener"><b>AU</b> <span class="dom">digitalmovement.com.au</span></a>
         <span class="sep">·</span>
-        <a href="https://digitalmovement.co.nz" target="_blank" rel="noopener"><b>NZ</b> digitalmovement.co.nz</a>
+        <a href="https://digitalmovement.co.nz" target="_blank" rel="noopener"><b>NZ</b> <span class="dom">digitalmovement.co.nz</span></a>
       </nav>
       <div class="langtoggle" role="group" aria-label="Language">
         <button data-l="id" aria-label="Bahasa Indonesia">
@@ -419,8 +422,8 @@ footer .meta{font-size:13px;color:var(--muted);width:100%}
       <div class="crow reveal">
         <div class="clabel" data-id="Pasien baru yang ditemukan lewat Google tiap bulan">New patients found through Google each month</div>
         <div class="cbars">
-          <div class="cbar them"><div class="who"><span data-id="Body Lab (1,5 km dari Anda)">Body Lab (1.5&nbsp;km away)</span><span class="n">~4,000</span></div><div class="track"><div class="fill" data-w="100"></div></div></div>
           <div class="cbar you"><div class="who"><span data-id="Puriva — Anda">Puriva — you</span><span class="n">~210</span></div><div class="track"><div class="fill" data-w="6"></div></div></div>
+          <div class="cbar them"><div class="who"><span data-id="Body Lab (1,5 km dari Anda)">Body Lab (1.5&nbsp;km away)</span><span class="n">~4,000</span></div><div class="track"><div class="fill" data-w="100"></div></div></div>
         </div>
       </div>
       <div class="crow reveal d1">
